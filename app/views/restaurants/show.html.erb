@@ -1,4 +1,16 @@
-<h2><%= @restaurant.name %></h2>
-<p>Address : <%= @restaurant.address %></p>
-<p>Phone number : <%= @restaurant.phone_number %></p>
-<p>Cuisine type : <%= @restaurant.category %></p>
+<div class="pt-4 px-4">
+  <h2 ><%= @restaurant.name %></h2>
+  <p>Address : <%= @restaurant.address %></p>
+  <p>Phone number : <%= @restaurant.phone_number %></p>
+  <p>Cuisine type : <%= @restaurant.category %></p>
+</div>
+
+<p class="pt-4 px-4" ><strong>Reviews</strong></p>
+<ul class="list-group px-4">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= "Comment :#{review.content} - Rate : #{review.rating}" %></li>
+  <% end %>
+</ul>
+
+<%= link_to "Back to restaurants' list", restaurants_path, class: "mt-3 mx-2 btn btn-info" %>
+<%= link_to "Ecrire une review", new_restaurant_review_path(@restaurant), class: "mt-3 btn btn-info"%>

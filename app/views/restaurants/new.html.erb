@@ -1,9 +1,10 @@
-<h2> Ajouter un nouveau restaurant </h2>
-
-<%= simple_form_for(restaurant) do |f| %>
+<h2 class="pt-4 px-4"> Ajouter un nouveau restaurant </h2>
+<div class="pt-4 px-4">
+<%= simple_form_for(@restaurant) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
   <%= f.input :phone_number %>
   <%= f.input :category %>
   <%= f.submit %>
 <% end %>
+</div>
